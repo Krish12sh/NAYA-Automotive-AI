@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        NAYA Drive Intelligence
+    </title>
+
+
+    <!-- GOOGLE FONT -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- LEAFLET REAL MAP -->
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+
+    <!-- NAYA CSS -->
+
+    <link
+        rel="stylesheet"
+        href="/static/style.css"
+    >
+
+
+    <!-- LEAFLET JAVASCRIPT -->
+
+    <script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    ></script>
+
+</head>
+
+
+<body>
+
+
+<div class="infotainment">
+
+
+    <!-- ================================= -->
+    <!-- TOP STATUS BAR -->
+    <!-- ================================= -->
+
+    <header class="top-bar">
+
+
+        <div class="brand">
+
+
+            <div class="brand-logo">
+
+                N
+
+            </div>
+
+
+            <div class="brand-name">
+
+                <strong>
+
+                    NAYA DRIVE
+
+                </strong>
+
+
+                <span>
+
+                    INTELLIGENT MOBILITY
+
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="vehicle-connected">
+
+
+            <span class="connected-light"></span>
+
+
+            VEHICLE CONNECTED
+
+
+        </div>
+
+
+        <div class="top-information">
+
+
+            <div class="weather">
+
+
+                <span class="weather-symbol">
+
+                    ☀
+
+                </span>
+
+
+                <div>
+
+                    <strong>
+
+                        28°C
+
+                    </strong>
+
+
+                    <small>
+
+                        Hyderabad
+
+                    </small>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="clock-area">
+
+
+                <strong id="clock">
+
+                    08:45 PM
+
+                </strong>
+
+
+                <small id="date">
+
+                    Saturday, 11 July
+
+                </small>
+
+
+            </div>
+
+
+            <div class="driver-profile">
+
+                K
+
+            </div>
+
+
+        </div>
+
+
+    </header>
+
+
+    <!-- ================================= -->
+    <!-- MAIN DASHBOARD -->
+    <!-- ================================= -->
+
+    <main class="dashboard">
+
+
+        <!-- ================================= -->
+        <!-- LEFT: VEHICLE -->
+        <!-- ================================= -->
+
+        <section class="left-column">
+
+
+            <article class="vehicle-panel">
+
+
+                <div class="panel-heading">
+
+
+                    <div>
+
+
+                        <span class="label">
+
+                            LIVE VEHICLE
+
+                        </span>
+
+
+                        <h2>
+
+                            Driving status
+
+                        </h2>
+
+
+                    </div>
+
+
+                    <span class="eco-badge">
+
+                        ECO
+
+                    </span>
+
+
+                </div>
+
+
+                <!-- SPEED -->
+
+
+                <div class="speed-section">
+
+
+                    <div class="speed-meter">
+
+
+                        <div class="speed-meter-inner">
+
+
+                            <strong id="speed">
+
+                                48
+
+                            </strong>
+
+
+                            <span>
+
+                                km/h
+
+                            </span>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- MOVING ROAD -->
+
+
+                    <div class="road">
+
+
+                        <div class="road-centre-line road-one"></div>
+
+                        <div class="road-centre-line road-two"></div>
+
+                        <div class="road-centre-line road-three"></div>
+
+
+                        <!-- CAR -->
+
+
+                        <div class="vehicle-model">
+
+
+                            <div class="car-body">
+
+
+                                <div class="front-glass"></div>
+
+
+                                <div class="car-roof"></div>
+
+
+                                <div class="back-glass"></div>
+
+
+                                <div class="front-light left-light"></div>
+
+
+                                <div class="front-light right-light"></div>
+
+
+                                <div class="rear-light rear-left"></div>
+
+
+                                <div class="rear-light rear-right"></div>
+
+
+                            </div>
+
+
+                            <div class="wheel wheel-front-left"></div>
+
+                            <div class="wheel wheel-front-right"></div>
+
+                            <div class="wheel wheel-back-left"></div>
+
+                            <div class="wheel wheel-back-right"></div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- VEHICLE INFORMATION -->
+
+
+                <div class="vehicle-information">
+
+
+                    <div>
+
+
+                        <span>
+
+                            RANGE
+
+                        </span>
+
+
+                        <strong id="rangeValue">
+
+                            410 km
+
+                        </strong>
+
+
+                    </div>
+
+
+                    <div>
+
+
+                        <span>
+
+                            FUEL
+
+                        </span>
+
+
+                        <strong id="fuelValue">
+
+                            72%
+
+                        </strong>
+
+
+                    </div>
+
+
+                    <div>
+
+
+                        <span>
+
+                            SECURITY
+
+                        </span>
+
+
+                        <strong id="securityValue">
+
+                            PROTECTED
+
+                        </strong>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </article>
+
+
+            <!-- VEHICLE CONTROLS -->
+
+
+            <article class="vehicle-controls">
+
+
+                <button class="vehicle-button active">
+
+
+                    <span class="button-icon">
+
+                        ❄
+
+                    </span>
+
+
+                    <div>
+
+
+                        <small>
+
+                            CLIMATE
+
+                        </small>
+
+
+                        <strong id="acValue">
+
+                            ON · 22°
+
+                        </strong>
+
+
+                    </div>
+
+
+                </button>
+
+
+                <button class="vehicle-button">
+
+
+                    <span class="button-icon">
+
+                        🔒
+
+                    </span>
+
+
+                    <div>
+
+
+                        <small>
+
+                            DOORS
+
+                        </small>
+
+
+                        <strong id="doorsValue">
+
+                            LOCKED
+
+                        </strong>
+
+
+                    </div>
+
+
+                </button>
+
+
+                <button class="vehicle-button">
+
+
+                    <span class="button-icon">
+
+                        ▣
+
+                    </span>
+
+
+                    <div>
+
+
+                        <small>
+
+                            SUNROOF
+
+                        </small>
+
+
+                        <strong id="sunroofValue">
+
+                            CLOSED
+
+                        </strong>
+
+
+                    </div>
+
+
+                </button>
+
+
+                <button class="vehicle-button">
+
+
+                    <span class="button-icon">
+
+                        ▱
+
+                    </span>
+
+
+                    <div>
+
+
+                        <small>
+
+                            DRIVER WINDOW
+
+                        </small>
+
+
+                        <strong id="windowValue">
+
+                            CLOSED
+
+                        </strong>
+
+
+                    </div>
+
+
+                </button>
+
+
+            </article>
+
+
+        </section>
+
+
+        <!-- ================================= -->
+        <!-- CENTRE: REAL NAVIGATION -->
+        <!-- ================================= -->
+
+        <section class="navigation-column">
+
+
+            <article class="navigation-panel">
+
+
+                <!-- NAVIGATION HEADER -->
+
+
+                <div class="navigation-heading">
+
+
+                    <div>
+
+
+                        <span class="label">
+
+                            SMART NAVIGATION
+
+                        </span>
+
+
+                        <h2 id="destinationTitle">
+
+                            Where would you like to go?
+
+                        </h2>
+
+
+                    </div>
+
+
+                    <div class="eta-display">
+
+
+                        <span>
+
+                            ETA
+
+                        </span>
+
+
+                        <strong id="etaValue">
+
+                            READY
+
+                        </strong>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- REAL MAP -->
+
+
+                <div class="map-wrapper">
+
+
+                    <div
+                        id="realMap"
+                        class="real-map"
+                    ></div>
+
+
+                    <!-- CURRENT LOCATION -->
+
+
+                    <div class="current-location-card">
+
+
+                        <span>
+
+                            CURRENT LOCATION
+
+                        </span>
+
+
+                        <strong id="currentLocationText">
+
+                            Kondapur, Hyderabad
+
+                        </strong>
+
+
+                    </div>
+
+
+                    <!-- ROUTE INFORMATION -->
+
+
+                    <div
+                        id="routeSummary"
+                        class="route-summary"
+                    >
+
+
+                        <div>
+
+
+                            <span>
+
+                                DISTANCE
+
+                            </span>
+
+
+                            <strong id="routeDistance">
+
+                                --
+
+                            </strong>
+
+
+                        </div>
+
+
+                        <div>
+
+
+                            <span>
+
+                                TRAVEL TIME
+
+                            </span>
+
+
+                            <strong id="routeDuration">
+
+                                --
+
+                            </strong>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- NEXT DIRECTION -->
+
+
+                <div class="navigation-guidance">
+
+
+                    <div class="direction-symbol">
+
+                        ➤
+
+                    </div>
+
+
+                    <div class="direction-information">
+
+
+                        <span>
+
+                            NEXT GUIDANCE
+
+                        </span>
+
+
+                        <strong id="navigationInstruction">
+
+                            Ask NAYA for a destination
+
+                        </strong>
+
+
+                    </div>
+
+
+                    <button
+                        class="ask-naya-button"
+                        onclick="focusNaya()"
+                    >
+
+                        Ask NAYA
+
+                    </button>
+
+
+                </div>
+
+
+            </article>
+
+
+            <!-- NEARBY PLACES -->
+
+
+            <div class="nearby-buttons">
+
+
+                <button onclick="searchNearby('petrol pump')">
+
+
+                    <span>
+
+                        ⛽
+
+                    </span>
+
+
+                    Petrol
+
+
+                </button>
+
+
+                <button onclick="searchNearby('electric vehicle charging station')">
+
+
+                    <span>
+
+                        ⚡
+
+                    </span>
+
+
+                    Charging
+
+
+                </button>
+
+
+                <button onclick="searchNearby('restaurant')">
+
+
+                    <span>
+
+                        🍴
+
+                    </span>
+
+
+                    Restaurants
+
+
+                </button>
+
+
+                <button onclick="searchNearby('parking')">
+
+
+                    <span>
+
+                        P
+
+                    </span>
+
+
+                    Parking
+
+
+                </button>
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- ================================= -->
+        <!-- RIGHT SIDE -->
+        <!-- ================================= -->
+
+        <section class="right-column">
+
+
+            <!-- NAYA -->
+
+
+            <article class="naya-panel">
+
+
+                <div class="naya-heading">
+
+
+                    <div>
+
+
+                        <span class="label">
+
+                            AI AUTOMOTIVE COPILOT
+
+                        </span>
+
+
+                        <h2>
+
+                            NAYA
+
+                        </h2>
+
+
+                    </div>
+
+
+                    <span
+                        id="nayaState"
+                        class="naya-status"
+                    >
+
+                        READY
+
+                    </span>
+
+
+                </div>
+
+
+                <div class="naya-content">
+
+
+                    <div class="naya-circle">
+
+
+                        <strong>
+
+                            N
+
+                        </strong>
+
+
+                        <div class="sound-bars">
+
+
+                            <i></i>
+
+                            <i></i>
+
+                            <i></i>
+
+                            <i></i>
+
+                            <i></i>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="naya-message-area">
+
+
+                        <strong id="nayaMessage">
+
+                            How can I help with your drive?
+
+                        </strong>
+
+
+                        <p>
+
+                            Speak naturally. I understand
+                            navigation, music, climate and
+                            vehicle-control requests.
+
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </article>
+
+
+            <!-- YOUTUBE MUSIC -->
+
+
+            <article class="music-panel">
+
+
+                <div class="music-heading">
+
+
+                    <div class="youtube-title">
+
+
+                        <div class="youtube-logo">
+
+
+                            <span>
+
+                                ▶
+
+                            </span>
+
+
+                        </div>
+
+
+                        <strong>
+
+                            YouTube Music
+
+                        </strong>
+
+
+                    </div>
+
+
+                    <span>
+
+                        NOW PLAYING
+
+                    </span>
+
+
+                </div>
+
+
+                <div class="music-information">
+
+
+                    <div class="album-cover">
+
+
+                        ♪
+
+                    </div>
+
+
+                    <div>
+
+
+                        <strong id="songTitle">
+
+                            Your Drive Mix
+
+                        </strong>
+
+
+                        <span>
+
+                            NAYA recommendations
+
+                        </span>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="music-progress">
+
+
+                    <span></span>
+
+
+                </div>
+
+
+                <div class="music-buttons">
+
+
+                    <button>
+
+                        ◀
+
+                    </button>
+
+
+                    <button class="music-play">
+
+                        ▶
+
+                    </button>
+
+
+                    <button>
+
+                        ▶
+
+                    </button>
+
+
+                </div>
+
+
+            </article>
+
+
+            <!-- CLIMATE -->
+
+
+            <article class="climate-panel">
+
+
+                <div class="climate-heading">
+
+
+                    <div>
+
+
+                        <span class="label">
+
+                            CABIN CLIMATE
+
+                        </span>
+
+
+                        <h2>
+
+                            Comfort control
+
+                        </h2>
+
+
+                    </div>
+
+
+                    <span>
+
+                        AUTO
+
+                    </span>
+
+
+                </div>
+
+
+                <div class="temperature-area">
+
+
+                    <button
+                        onclick="changeTemperature(-1)"
+                    >
+
+                        −
+
+                    </button>
+
+
+                    <div>
+
+
+                        <strong id="temperature">
+
+                            22°
+
+                        </strong>
+
+
+                        <span>
+
+                            CABIN TEMPERATURE
+
+                        </span>
+
+
+                    </div>
+
+
+                    <button
+                        onclick="changeTemperature(1)"
+                    >
+
+                        +
+
+                    </button>
+
+
+                </div>
+
+
+                <div class="climate-status">
+
+
+                    <span>
+
+                        ❄ AC ON
+
+                    </span>
+
+
+                    <span>
+
+                        ◉ FAN 3
+
+                    </span>
+
+
+                    <span>
+
+                        AUTO
+
+                    </span>
+
+
+                </div>
+
+
+            </article>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================================= -->
+    <!-- BOTTOM MENU -->
+    <!-- ================================= -->
+
+    <footer class="bottom-menu">
+
+
+        <button class="home-menu">
+
+            ⌂
+
+        </button>
+
+
+        <button>
+
+
+            ◇
+
+
+            <span>
+
+                Navigation
+
+            </span>
+
+
+        </button>
+
+
+        <button>
+
+
+            ♫
+
+
+            <span>
+
+                Media
+
+            </span>
+
+
+        </button>
+
+
+        <button>
+
+
+            ❄
+
+
+            <span>
+
+                Climate
+
+            </span>
+
+
+        </button>
+
+
+        <button
+            class="naya-menu"
+            onclick="focusNaya()"
+        >
+
+
+            N
+
+
+            <span>
+
+                NAYA
+
+            </span>
+
+
+        </button>
+
+
+        <div class="network-status">
+
+
+            <span>
+
+                5G
+
+            </span>
+
+
+            <span>
+
+                ● GPS
+
+            </span>
+
+
+            <span>
+
+                🔋 86%
+
+            </span>
+
+
+        </div>
+
+
+    </footer>
+
+
+</div>
+
+
+<script src="/static/script.js"></script>
+
+
+</body>
+
+</html>
