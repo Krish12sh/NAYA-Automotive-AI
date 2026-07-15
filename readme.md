@@ -1,5 +1,12 @@
 # NAYA — Context-Aware Automotive AI Companion
 
+## 🎥 NAYA Demonstration Video
+
+
+
+https://github.com/user-attachments/assets/d77cab56-756f-4c00-9741-239624e3a1a2
+
+
 NAYA is a conversational, context-aware and proactive automotive AI companion designed to explore the future of human–vehicle interaction.
 
 Unlike traditional command-based vehicle assistants that depend on fixed phrases, NAYA uses natural-language understanding to interpret conversational, indirect and multi-step requests.
